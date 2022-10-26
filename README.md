@@ -4,10 +4,10 @@ A WPF hosting library for PlexNet framework that targeting .NET 6
 
 ## How to use
 
-1. Implement `Adita.PlexNet.Wpf.Hosting.IApplication` to your `App.xaml.cs`
+1. Implement `Adita.PlexNet.Wpf.Hosting.IWpfApplication` to your `App.xaml.cs`
     
    ```
-        public partial class App : Application, IApplication
+        public partial class App : Application, IWpfApplication
         {
             //...
         
