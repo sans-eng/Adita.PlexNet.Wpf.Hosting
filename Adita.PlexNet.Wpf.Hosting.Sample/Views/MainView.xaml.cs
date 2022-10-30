@@ -1,5 +1,7 @@
 ﻿using Adita.PlexNet.Wpf.Hosting.Sample.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.ComponentModel;
 using System.Windows.Controls;
 
 namespace Adita.PlexNet.Wpf.Hosting.Sample.Views
@@ -12,7 +14,10 @@ namespace Adita.PlexNet.Wpf.Hosting.Sample.Views
         public MainView()
         {
             InitializeComponent();
-            DataContext = App.Current.ServiceProvider.GetRequiredService<MainViewModel>();
+            if (!DesignerProperties.GetIsInDesignMode(this))
+            {
+                DataContext = App.Current.ServiceProvider.GetRequiredService<MainViewModel>();
+            }
         }
     }
 }

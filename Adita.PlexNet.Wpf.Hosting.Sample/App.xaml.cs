@@ -25,5 +25,10 @@ namespace Adita.PlexNet.Wpf.Hosting.Sample
             ServiceProvider = serviceProvider;
         }
         #endregion Public methods
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+
+        }
     }
 }

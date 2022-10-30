@@ -35,16 +35,17 @@ namespace Adita.PlexNet.Wpf.Hosting
         {
             if (_isBuilt)
             {
-                throw new InvalidOperationException("A Windows Presentation Foundation application has been built.");
+                throw new InvalidOperationException($"A specified {nameof(TApp)} has been built.");
             }
 
             TApp app = new();
 
-            app.SetConfiguration(Configuration);
             app.SetServiceProvider(Services.BuildServiceProvider());
+            app.SetConfiguration(Configuration);
             _isBuilt = true;
             return app;
         }
+
         /// <inheritdoc/>
         public IApplicationBuilder<TApp> ConfigureAppConfiguration(Action<IConfigurationBuilder> configureAction)
         {
